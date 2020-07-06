@@ -54,10 +54,12 @@ def check_auth(message):
         logging.warning(f"{message.author.id} - {message.author.name} has tried a command with insufficient permissions")
         raise UnAuthorized('This command requires privileged rights')
 
+
 def is_admin():
     def predicate(ctx):
         return ctx.message.author.id in authorized_ids
     return commands.check(predicate)
+
 
 @client.event
 async def on_ready():

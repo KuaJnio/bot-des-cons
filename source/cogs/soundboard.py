@@ -7,7 +7,6 @@ import utils
 from main import is_admin
 
 
-
 class Soundboard(commands.Cog):
     def __init__(self, client):
         self.client = client
@@ -15,9 +14,9 @@ class Soundboard(commands.Cog):
     @commands.command(aliases=['sound', 's'])
     @is_admin()
     @commands.dm_only()
-    @commands.cooldown(3, 60, type= commands.BucketType.user)
+    @commands.cooldown(3, 60, type=commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.guild, wait=True)
-    async def soundboard(self, ctx, sample_name : str):
+    async def soundboard(self, ctx, sample_name: str):
         logging.info(f'Command from {ctx.message.author.display_name}: {sample_name}')
 
         sample = utils.get_sample_from_name(
@@ -32,7 +31,6 @@ class Soundboard(commands.Cog):
                 while vc.is_playing():
                     await asyncio.sleep(0.5)
                 await vc.disconnect()
-
 
 
 def setup(client):
