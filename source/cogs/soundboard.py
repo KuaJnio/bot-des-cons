@@ -16,12 +16,17 @@ class Soundboard(commands.Cog):
     @commands.dm_only()
     @commands.cooldown(3, 60, type=commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.guild, wait=True)
-    async def soundboard(self, ctx, *args):
-        sample_name = f"{' '.join(args)}"
-        logging.info(f"Command from {ctx.message.author.display_name}: {sample_name}")
+    async def soundboard(self, ctx, *sound_name):
+        sample_name = f"{' '.join(sound_name)}"
+        logging.info(f"Command soundboard from {ctx.message.author.display_name}: {sample_name}")
+        sample = None
+        try:
+            val = int(sample_name)
+            sample = utils.get_sample_from_id(self.client.samples, val)
+        except ValueError:
+            sample = utils.get_sample_from_name(
+                self.client.samples, sample_name)
 
-        sample = utils.get_sample_from_name(
-            self.client.samples, sample_name)
         if sample:
             member = self.client.guild.get_member(ctx.message.author.id)
             connected = member.voice
@@ -32,6 +37,17 @@ class Soundboard(commands.Cog):
                 while vc.is_playing():
                     await asyncio.sleep(0.5)
                 await vc.disconnect()
+
+    @commands.command(aliases=['list', 'l'])
+    @commands.dm_only()
+    async def soundlist(self, ctx):
+
+        logging.info(f"Command soundlist from {ctx.message.author.display_name}")
+        command_list = []
+        for sample in self.client.samples:
+            command_list.append(f"{sample}-{self.client.samples[sample]['path'].split('.')[0]}")
+
+        await ctx.send("Voici la liste des sons disponibles:\n```css\n{}```".format('\n'.join(command_list)))
 
 
 def setup(client):

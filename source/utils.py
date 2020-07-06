@@ -12,7 +12,7 @@ class AudioSample:
 
     @classmethod
     def from_dict(cls, data):
-        return cls(data["name"], data["path"], data["tags"], data["users"], data["volume"])
+        return cls(data["path"].split(".")[0], data["path"], data["tags"], data["users"], data["volume"])
 
     def print(self):
         logging.info(f"Name: {self.name}, path: {self.path}, tags: {self.tags}, users: {self.users}, volume: {self.volume}")
