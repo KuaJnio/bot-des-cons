@@ -16,8 +16,9 @@ class Soundboard(commands.Cog):
     @commands.dm_only()
     @commands.cooldown(3, 60, type=commands.BucketType.user)
     @commands.max_concurrency(1, per=commands.BucketType.guild, wait=True)
-    async def soundboard(self, ctx, sample_name: str):
-        logging.info(f'Command from {ctx.message.author.display_name}: {sample_name}')
+    async def soundboard(self, ctx, *args):
+        sample_name = f"{' '.join(args)}"
+        logging.info(f"Command from {ctx.message.author.display_name}: {sample_name}")
 
         sample = utils.get_sample_from_name(
             self.client.samples, sample_name)

@@ -138,5 +138,19 @@
         "users": [198849540353163264],
         "volume": 256,
         "tags": ["ostrane", "piano"]
+    },
+    "21" : {
+        "path": "ostrane_focus_rax.mp3",
+        "name": "ostrane focus rax",
+        "users": [198849540353163264],
+        "volume": 256,
+        "tags": ["ostrane", "highground"]
+    },
+    "22" : {
+        "path": "ostrane_omfg.mp3",
+        "name": "ostrane omfg",
+        "users": [198849540353163264],
+        "volume": 256,
+        "tags": ["ostrane", "omfg"]
     }
 }
