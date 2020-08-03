@@ -9,7 +9,7 @@
         "path": "invoker.mp3",
         "users": [198719461283463168],
         "volume": 10,
-        "tags": ["dota", "invoker", "rhum_dota"]
+        "tags": ["dota", "invoker", "ruru"]
     },
     "3" : {
         "path": "jglaugh.mp3",
@@ -69,7 +69,7 @@
         "path": "marik_completement_retard.mp3",
         "users": [198556491341496340],
         "volume": 150,
-        "tags": ["dota", "marik", "retard", "brain_fart"]
+        "tags": ["dota", "marik", "retard", "brain_fart", "kuaj"]
     },
     "13" : {
         "path": "marik_wrong_camera.mp3",
@@ -81,13 +81,13 @@
         "path": "mobborane_rhumdota_retourner_maman.mp3",
         "users": [198719461283463168, 198530702558494720],
         "volume": 256,
-        "tags": ["rhum_dota", "mob_borane", "trash_talk", "maman"]
+        "tags": ["ruru", "mob_borane", "trash_talk", "maman"]
     },
     "15" : {
         "path": "rhumdoto_peugeot206.mp3",
         "users": [198719461283463168],
         "volume": 200,
-        "tags": ["rhum_dota", "peugeot206", "trash_talk"]
+        "tags": ["ruru", "peugeot206", "trash_talk"]
     },
     "16" : {
         "path": "smudsku_inviter_guilde.mp3",
@@ -111,12 +111,12 @@
         "path": "edaic_faut_vraiment_tout_faire.mp3",
         "users": [198682994565709824],
         "volume": 256,
-        "tags": []
+        "tags": ["edaic"]
     },
     "20" : {
         "path": "ostrane_piano_invoker_meepo.mp3",
         "users": [198849540353163264],
-        "volume": 256,
+        "volume": 150,
         "tags": ["ostrane", "piano"]
     },
     "21" : {
@@ -130,5 +130,29 @@
         "users": [198849540353163264],
         "volume": 256,
         "tags": ["ostrane", "omfg"]
+    },
+    "23" : {
+        "path": "rhumdoto_acheter_banane.mp3",
+        "users": [198719461283463168],
+        "volume": 256,
+        "tags": ["ruru"]
+    },
+    "24" : {
+        "path": "batman_I_was_wondering.mp3",
+        "users": [],
+        "volume": 256,
+        "tags": ["didier", "marik"]
+    },
+    "25" : {
+        "path": "rhum_eau.mp3",
+        "users": [198719461283463168],
+        "volume": 256,
+        "tags": ["ruru"]
+    },
+    "26" : {
+        "path": "kuaj_pas_bonne_idee_tes_con.mp3",
+        "users": [189489874645155841],
+        "volume": 256,
+        "tags": ["kuaj"]
     }
 }

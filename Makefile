@@ -13,6 +13,9 @@ run:
 logs:
 	docker logs -f bot-des-cons ||:
 
+exec:
+	docker exec -it bot-des-cons bash ||:
+
 clean:
 	docker rm -f bot-des-cons ||:
-	docker rmi $(docker images --quiet --filter "dangling=true") ||:
+	docker image prune -f ||:

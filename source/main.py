@@ -20,15 +20,15 @@ authorized_ids = [auto_id, kuaj_id, mob_id]
 
 token = sys.argv[1]
 
-description = 'Soundboard des Cons'
-client = commands.Bot(command_prefix='!', description=description)
+description = "Soundboard des Cons"
+client = commands.Bot(command_prefix="!", description=description)
 
-server_name = 'Le Discord des Cons'
+server_name = "Le Discord des Cons"
 default_role = "Trou du cul la balayette"
 
 
 def setup_logging():
-    logging.getLogger('discord').setLevel(logging.WARNING)
+    logging.getLogger("discord").setLevel(logging.WARNING)
 
     root = logging.getLogger()
     root.setLevel(logging.INFO)
@@ -36,7 +36,7 @@ def setup_logging():
     handler = logging.StreamHandler(sys.stdout)
     handler.setLevel(logging.DEBUG)
     formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     handler.setFormatter(formatter)
     root.addHandler(handler)
 
@@ -52,7 +52,7 @@ class UnAuthorized(Exception):
 def check_auth(message):
     if not message.author.id in authorized_ids:
         logging.warning(f"{message.author.id} - {message.author.name} has tried a command with insufficient permissions")
-        raise UnAuthorized('This command requires privileged rights')
+        raise UnAuthorized("This command requires privileged rights")
 
 
 def is_admin():
@@ -73,7 +73,7 @@ async def on_ready():
 
         logging.info("Ready !")
     except Exception as e:
-        logging.error('Error in on_ready: {}'.format(e))
+        logging.error(f"Error in on_ready: {e}")
 
 
 @client.event
@@ -83,7 +83,7 @@ async def on_member_join(member):
         await member.add_roles(role)
         logging.info("Added role for new member")
     except Exception as e:
-        logging.error('Error in on_member_join: {}'.format(e))
+        logging.error(f"Error in on_member_join: {e}")
 
 
 @client.event
@@ -91,7 +91,7 @@ async def on_reaction_add(reaction, user):
     try:
         pass
     except Exception as e:
-        logging.error('Error in on_reaction_add: {}'.format(e))
+        logging.error(f"Error in on_reaction_add: {e}")
 
 
 @client.event
@@ -99,14 +99,14 @@ async def on_voice_state_update(member, before, after):
     try:
         pass
     except Exception as e:
-        logging.error('Error in on_voice_state_update: {}'.format(e))
+        logging.error(f"Error in on_voice_state_update: {e}")
 
 if __name__ == "__main__":
     try:
         setup_logging()
-        for filename in os.listdir('./cogs'):
-            if filename.endswith('.py'):
-                client.load_extension(f'cogs.{filename[:-3]}')
+        for filename in os.listdir("./cogs"):
+            if filename.endswith(".py"):
+                client.load_extension(f"cogs.{filename[:-3]}")
         client.run(token)
     except Exception as e:
-        logging.error('Error in __main__: {}'.format(e))
+        logging.error(f"Error in __main__: {e}")

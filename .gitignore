@@ -3,5 +3,4 @@ dev.env
 .vscode
 .venv
 source/setup.py
-__pycache__/
-cogs./__pycache__/
+**/__pycache__/ 

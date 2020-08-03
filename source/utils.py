@@ -28,7 +28,7 @@ def get_sample_from_id(samples, sample_id):
     try:
         return AudioSample.from_dict(samples[str(sample_id)])
     except Exception as e:
-        logging.error('Error in get_sample_from_id: {}'.format(e))
+        logging.error(f"Error in get_sample_from_id: {e}")
         return None
 
 
@@ -38,7 +38,19 @@ def get_sample_from_name(samples, sample_name):
             if samples[sample]["name"] == sample_name:
                 return AudioSample.from_dict(samples[sample])
     except Exception as e:
-        logging.error('Error in get_sample_from_name: {}'.format(e))
+        logging.error(f"Error in get_sample_from_name: {e}")
+        return None
+
+
+def get_sample_from_tag(samples, tag):
+    try:
+        result = {}
+        for sample in samples:
+            if tag in samples[sample]["tags"]:
+                result[sample] = samples[sample]
+        return result
+    except Exception as e:
+        logging.error(f"Error in get_sample_from_tag: {e}")
         return None
 
 

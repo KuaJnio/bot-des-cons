@@ -10,5 +10,3 @@ RUN apt-get install -y libffi-dev libnacl-dev python3-dev python3-pip ffmpeg
 RUN python3 -m pip install -U discord.py[voice]
 
 COPY source .
-
-COPY audios .
