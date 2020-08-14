@@ -51,7 +51,7 @@
         "path": "edaic_afk_teamfight.mp3",
         "users": [198682994565709824],
         "volume": 200,
-        "tags": ["dota", "edaic", "afk", "teamfight"]
+        "tags": ["dota", "eda", "afk", "teamfight"]
     },
     "10" : {
         "path": "kaoru_fail_rp_stream.mp3",
@@ -111,7 +111,7 @@
         "path": "edaic_faut_vraiment_tout_faire.mp3",
         "users": [198682994565709824],
         "volume": 256,
-        "tags": ["edaic"]
+        "tags": ["eda"]
     },
     "20" : {
         "path": "ostrane_piano_invoker_meepo.mp3",
@@ -154,5 +154,17 @@
         "users": [189489874645155841],
         "volume": 256,
         "tags": ["kuaj"]
+    },
+    "27" : {
+        "path": "rhum_cul_kuaj.mp3",
+        "users": [198719461283463168, 189489874645155841,198682994565709824],
+        "volume": 256,
+        "tags": ["ruru", "eda", "kuaj"]
+    },
+    "28" : {
+        "path": "rhum_chrono.mp3",
+        "users": [198719461283463168, 199806633491169280],
+        "volume": 256,
+        "tags": ["val", "ruru", "chrono"]
     }
 }
