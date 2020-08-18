@@ -166,5 +166,11 @@
         "users": [198719461283463168, 199806633491169280],
         "volume": 256,
         "tags": ["val", "ruru", "chrono"]
+    },
+    "29" : {
+        "path": "ostrane_sous_lit.mp3",
+        "users": [198849540353163264],
+        "volume": 256,
+        "tags": ["lit", "ostrane"]
     }
 }
