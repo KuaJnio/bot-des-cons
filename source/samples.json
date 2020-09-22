@@ -172,5 +172,41 @@
         "users": [198849540353163264],
         "volume": 256,
         "tags": ["lit", "ostrane"]
+    },
+    "30" : {
+        "path": "magmalengar_saucisson_main.mp3",
+        "users": [],
+        "volume": 256,
+        "tags": ["saucisson"]
+    },
+    "31" : {
+        "path": "snooze_intention_bonne.mp3",
+        "users": [],
+        "volume": 256,
+        "tags": ["snooze"]
+    },
+    "32" : {
+        "path": "rhum_putain_blague.mp3",
+        "users": [198719461283463168],
+        "volume": 256,
+        "tags": ["ruru"]
+    },
+    "33" : {
+        "path": "kuaj_bubz_winrate_negatif.mp3",
+        "users": [],
+        "volume": 256,
+        "tags": []
+    },
+    "34" : {
+        "path": "marik_secouer_partout_pantalon.mp3",
+        "users": [198556491341496340],
+        "volume": 256,
+        "tags": ["marik", "malaise"]
+    },
+    "35" : {
+        "path": "rhum_ostrane_pas_assez_solide.mp3",
+        "users": [198719461283463168],
+        "volume": 256,
+        "tags": ["ruru", "ostrane"]
     }
 }
