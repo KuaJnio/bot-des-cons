@@ -23,8 +23,8 @@ token = sys.argv[1]
 description = "Soundboard des Cons"
 client = commands.Bot(command_prefix="!", description=description)
 
-server_name = "Le Discord des Cons"
-default_role = "Trou du cul la balayette"
+server_name = "Le Think Tank"
+default_role = "Complotiste"
 
 
 def setup_logging():
