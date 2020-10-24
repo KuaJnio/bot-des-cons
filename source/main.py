@@ -79,16 +79,8 @@ async def on_ready():
 @client.event
 async def on_member_join(member):
     try:
-        if member.id == kuaj_id:
-            # Doyens
-            await member.add_roles(discord.utils.get(member.guild.roles, id=388104536746622976))
-            # Cinéphile
-            await member.add_roles(discord.utils.get(member.guild.roles, id=265915753637740545))
-            # Néo-con
-            await member.add_roles(discord.utils.get(member.guild.roles, id=309332835091611658))
-        else:
-            await member.add_roles(discord.utils.get(member.guild.roles, id=default_role))
-            logging.info("Added role for new member")
+        await member.add_roles(discord.utils.get(member.guild.roles, id=default_role))
+        logging.info("Added role for new member")
     except Exception as e:
         logging.error(f"Error in on_member_join: {e}")
 
