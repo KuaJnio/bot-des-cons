@@ -24,7 +24,7 @@ description = "Soundboard des Cons"
 client = commands.Bot(command_prefix="!", description=description)
 
 server_name = "Le Think Tank"
-default_role = "Complotiste"
+default_role = 295466109698703362  # Complotiste
 
 
 def setup_logging():
@@ -51,7 +51,8 @@ class UnAuthorized(Exception):
 
 def check_auth(message):
     if not message.author.id in authorized_ids:
-        logging.warning(f"{message.author.id} - {message.author.name} has tried a command with insufficient permissions")
+        logging.warning(
+            f"{message.author.id} - {message.author.name} has tried a command with insufficient permissions")
         raise UnAuthorized("This command requires privileged rights")
 
 
@@ -66,11 +67,10 @@ async def on_ready():
     try:
         client.general_chan = discord.utils.get(
             client.get_all_channels(), guild__name=server_name, name="general")
-        client.test_chan = client.get_channel(239407287091986432)
         client.guild = client.get_guild(198534713575473152)
-
         client.samples = utils.load_json("samples.json")
-
+        link = await client.general_chan.create_invite(max_age=0, max_uses=1, unique=True)
+        logging.info(f"Invitation link: {link}")
         logging.info("Ready !")
     except Exception as e:
         logging.error(f"Error in on_ready: {e}")
@@ -79,9 +79,16 @@ async def on_ready():
 @client.event
 async def on_member_join(member):
     try:
-        role = discord.utils.get(member.guild.roles, name=default_role)
-        await member.add_roles(role)
-        logging.info("Added role for new member")
+        if member.id == kuaj_id:
+            # Doyens
+            await member.add_roles(discord.utils.get(member.guild.roles, id=388104536746622976))
+            # Cinéphile
+            await member.add_roles(discord.utils.get(member.guild.roles, id=265915753637740545))
+            # Néo-con
+            await member.add_roles(discord.utils.get(member.guild.roles, id=309332835091611658))
+        else:
+            await member.add_roles(discord.utils.get(member.guild.roles, id=default_role))
+            logging.info("Added role for new member")
     except Exception as e:
         logging.error(f"Error in on_member_join: {e}")
 
