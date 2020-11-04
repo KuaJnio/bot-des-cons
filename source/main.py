@@ -69,8 +69,15 @@ async def on_ready():
             client.get_all_channels(), guild__name=server_name, name="general")
         client.guild = client.get_guild(198534713575473152)
         client.samples = utils.load_json("samples.json")
-        link = await client.general_chan.create_invite(max_age=0, max_uses=1, unique=True)
-        logging.info(f"Invitation link: {link}")
+        # link = await client.general_chan.create_invite(max_age=0, max_uses=1, unique=True)
+        # logging.info(f"Invitation link: {link}")
+        role = discord.utils.get(client.guild.roles, id=default_role)
+        logging.info(
+            f"Checking that everyone has at least the default role {role}")
+        for member in client.guild.members:
+            if len(member.roles) == 1:
+                await member.add_roles(role)
+                logging.info(f"Added role {role} for {member.display_name}")
         logging.info("Ready !")
     except Exception as e:
         logging.error(f"Error in on_ready: {e}")
